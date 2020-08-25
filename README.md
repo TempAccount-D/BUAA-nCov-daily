@@ -1,7 +1,9 @@
 北航nCov在校生每日健康自动打卡脚本
 
  - 可定时，默认为每天7/11/18点5分分别打卡
-参考了浙大nCov自动打卡脚本(https://github.com/Tishacy/ZJU-nCov-Hitcarder)。在此表示感谢。
+参考了浙大nCov自动打卡脚本(https://github.com/Tishacy/ZJU-nCov-Hitcarder)。
+
+在此表示感谢。
 
 1、安装依赖
 
@@ -11,7 +13,7 @@
 2、运行
 
     ```bash
-    $ pip3 install -r requirements.txt
+    $ python3 daka.py
     ```
 
 3、config.json为配置文件。
