@@ -1,4 +1,5 @@
-北航nCov在校生每日健康自动打卡脚本
+北航nCov肺炎在校生每日健康自动打卡脚本
+适用于北航小程序中的在校生健康填报
 
  - 可定时，默认为每天7/11/18点5分分别打卡
 参考了浙大nCov自动打卡脚本(https://github.com/Tishacy/ZJU-nCov-Hitcarder)。
