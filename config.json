@@ -1,0 +1,8 @@
+{
+    "username": "xxxx",
+    "password": "xxxx",
+    "schedule": {
+        "hour": "7,11,18",
+        "minute": "5"
+    }
+}
