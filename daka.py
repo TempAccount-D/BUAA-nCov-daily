@@ -38,11 +38,14 @@ class DaKa(object):
         res1 = self.sess.post(url=self.login_url, data=data)
         tt = res1.content.decode()
         while '操作成功' not in res1.content.decode():
+            time.sleep(15)
             res1 = self.sess.post(url=self.login_url, data=data)
         info_json = info #json.dumps(info)
         res = self.sess.post(self.save_url, data=info_json)
-        while '您已经上报过' not in res.content.decode():
+        while '您已上报过' not in res.content.decode() and '还未到打卡时间' not in res.content.decode():
+            time.sleep(15)
             res = self.sess.post(self.save_url, data=info_json)
+        print('打卡成功')
         return self.sess
 
     # def _rsa_encrypt(self, password_str, e_str, M_str):
@@ -70,7 +73,7 @@ class DecodeError(Exception):
 
 def main(username, password):
     print("\n[Time] %s" %datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
-    print("🚌 打卡任务启动")
+    print(" 打卡任务启动")
     spinner = Halo(text='Loading', spinner='dots')
     spinner.start('正在新建打卡实例...')
     dk = DaKa(username, password)
