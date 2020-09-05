@@ -42,7 +42,7 @@ class DaKa(object):
             res1 = self.sess.post(url=self.login_url, data=data)
         info_json = info #json.dumps(info)
         res = self.sess.post(self.save_url, data=info_json)
-        while '您已上报过' not in res.content.decode() and '还未到打卡时间' not in res.content.decode():
+        while '操作成功' not in res.content.decode() and '还未到打卡时间' not in res.content.decode():
             time.sleep(15)
             res = self.sess.post(self.save_url, data=info_json)
         print('打卡成功')
